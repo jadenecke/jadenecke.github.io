@@ -33,6 +33,56 @@
   </url>
   
   <url>
+    <loc>/tags/bert/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cluster/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nlp/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/nlp/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/03/09/training-a-bidirectional-encoder-representations-from-transformers-bert-on-a-cluster-with-r-links-and-tips/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/postdemoposts/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
@@ -80,11 +130,6 @@
   <url>
     <loc>/tags/source-themes/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -138,11 +183,6 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/demo/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
@@ -173,47 +213,12 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/test/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/test/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/07/23/test-post/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/test2/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/test2/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   

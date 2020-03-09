@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
@@ -13,51 +13,116 @@
     </image>
     
     <item>
-      <title>Test Post</title>
-      <link>/2015/07/23/test-post/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <guid>/2015/07/23/test-post/</guid>
+      <title>Training a Bidirectional Encoder Representations from Transformers (BERT) on a Cluster with R: Links and tips</title>
+      <link>/2020/03/09/training-a-bidirectional-encoder-representations-from-transformers-bert-on-a-cluster-with-r-links-and-tips/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/2020/03/09/training-a-bidirectional-encoder-representations-from-transformers-bert-on-a-cluster-with-r-links-and-tips/</guid>
       <description>
 
 
-&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will merely be a short script of what my experience was and which errors I encountered. Or see it as notes in the case that I ever have to do this again.&lt;/p&gt;
+&lt;p&gt;I won’t give any links providing theoretical background, because I think everybody has different needs and any search engine should do a better job with this then me. There are a ton of sources out there with different highlights, so just look around.&lt;/p&gt;
+&lt;div id=&#34;code-tutorial&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Code Tutorial:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blogs.rstudio.com/tensorflow/posts/2019-09-30-bert-r/&#34; class=&#34;uri&#34;&gt;https://blogs.rstudio.com/tensorflow/posts/2019-09-30-bert-r/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is the only tutorial I could find for R, but there are more python versions available.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
+&lt;div id=&#34;software-prerequisites&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Software prerequisites:&lt;/h2&gt;
+&lt;p&gt;The cluster I work on provides modules that can be easily loaded. In case of R it comes with no packages at all and in case of python only with some base modules. Therefore the next two links will explain how to install those:&lt;/p&gt;
+&lt;p&gt;For R:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://thecoatlessprofessor.com/programming/r/working-with-r-on-a-cluster/&#34; class=&#34;uri&#34;&gt;https://thecoatlessprofessor.com/programming/r/working-with-r-on-a-cluster/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;They key part starts at “Setup a local R library for installing and loading R Packages” but the section “Passing arguments” is also very interesting, if you want to launch you script with some parameters, e.g. if you want to specify different learning rates, but don’t want to copy &amp;amp; paste multiple scripts to run them parallel.&lt;/p&gt;
+&lt;p&gt;For python:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.pik-potsdam.de/members/linstead/guides/python-on-the-cluster/installing-your-own-python-modules-on-the-cluster&#34; class=&#34;uri&#34;&gt;https://www.pik-potsdam.de/members/linstead/guides/python-on-the-cluster/installing-your-own-python-modules-on-the-cluster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I used this tutorial with “Option 2. virtualenv and pip”. The instructions are deprecated, because I think they favor a conda virtualenv over a python virtualenv now. I have no knowledge to judge the appropriateness of either, but the python virtualenv worked great for me and was easy to install and understand.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;cuda-and-tensorflow-and-cudnn&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;CUDA and Tensorflow (and cuDNN):&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;This is only relevant if you want to train on a GPU. If you only train on a CPU just install the newest version of tensorflow&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This gave the most troubles. You want to be very accurate about the versions of all three and have them matched, otherwise you enter a whole new world of frustration. Here is a list of which versions are compatible:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.tensorflow.org/install/source#tested_build_configurations&#34; class=&#34;uri&#34;&gt;https://www.tensorflow.org/install/source#tested_build_configurations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CUDA came as a module on my cluster, and I was able to choose different versions. I chose the 10.1 version. Installing tensorflow was trouble-less using the python virtualenv and pip. CuDNN took me a while to figure out, because it wasn’t installed with the CUDA version on the cluster. I assume this is due to some license issues, the reason being you have to apply for the NVIDIA developer program to download them. The easiest and non-invasive way to include the cuDNN files I found in an Stack Overflow thread after banging my head against a wall for a whole day:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/41494585/setting-ld-library-path-from-inside-r&#34; class=&#34;uri&#34;&gt;https://stackoverflow.com/questions/41494585/setting-ld-library-path-from-inside-r&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You will know that you have to perform this step if you see an error message like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ImportError: libcudnn.so.7: cannot open shared object file: No such file or directory&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Basically you want to include every file with &lt;em&gt;dyn.load()&lt;/em&gt; that tensorflow is complaining about. For me it was only this &lt;em&gt;libcudnn.so.7&lt;/em&gt; file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;keras&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Keras:&lt;/h2&gt;
+&lt;p&gt;Keras for R itself worked without much troubles, the only bug I also encountered was the mysterious and strangely appearing and disappearing&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt; Error in py_get_attr_impl(x, name, silent) : 
+  AttributeError: module &amp;#39;kerastools&amp;#39; has no attribute &amp;#39;progbar&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;bug. This apparently is a real bug and fixed in the new version of keras:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rstudio/keras/issues/992&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/keras/issues/992&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the time being you can either install the development version of keras, which I was hesitant about, not wanting to introduce more dependency issues, or just run&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;try(k_constant(1), silent=TRUE)
+try(k_constant(1), silent=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will trigger the error on the first try and apparently load whatever is needed so it works on the second try. Again this is a bug that will be fixed in the upcoming version (current version: 2.2.5.0)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;saving-loading-and-predicting-the-bert-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Saving, loading, and predicting the BERT model:&lt;/h2&gt;
+&lt;p&gt;There are different means of saving and loading a model with keras:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;save_model_tf(): This function saves the model as multiple files in a folder and you have to specify the only the folder, if you want to load the model. I had no luck with this. There always was an error message when I tried to load the model but i also didn’t try to hard, as I found another way that worked for me.&lt;/li&gt;
+&lt;li&gt;save_model_weights_tf/hdf5(): As far as I understand, this only saves the matrix with the weights, so you need to specify and compile the whole model as it was trained, when you want to load weights into the model.
+-save_model_hdf5(): This was the function I ended up using, although it also wasn’t very straight forward. It saves the model in a single file (or multiple, depending on the size). The slightly finicky details are as follows:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You want to load the model with the following command:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bert &amp;lt;- keras::load_model_hdf5(&amp;quot;path/to/file.hdf5&amp;quot;),
+                               custom_objects = k_bert$get_custom_objects())&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Therefore, you need to load the model (which you have to do anyway to tokenize your to be predicted data). All the code to load the model you can find in the BERT for R tutorial. As BERT uses custom layers not included with keras, you have to pass them as custom objects to the load function. Otherwise this error will appear:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Error in py_call_impl(callable, dots$args, dots$keywords) : 
+  ValueError: Unknown layer: TokenEmbedding &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, at least for me, the model also failed to auto-compile on load, so I had to compile it by hand. Fortunately this worked by the same means as in the training tutorial. You have to specify the target length, learning rate, batch size, and epochs, but that it plain worked for me.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c(decay_steps, warmup_steps) %&amp;lt;-% k_bert$calc_train_steps(
+  targetsPred %&amp;gt;% length(),
+  batch_size=bch_size,
+  epochs=epochs
+)
+
+bert %&amp;gt;% compile(
+  k_bert$AdamWarmup(decay_steps=decay_steps, 
+                    warmup_steps=warmup_steps, lr=learning_rate),
+  loss = &amp;#39;binary_crossentropy&amp;#39;,
+  metrics = &amp;#39;accuracy&amp;#39;
 )&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
+&lt;p&gt;The data you want to predict needs to be tokenized as well. To achieve this, just repeat the same steps as with the training data, until the &lt;em&gt;concat&lt;/em&gt; list is made. For the &lt;em&gt;k_bert$calc_train_steps()&lt;/em&gt; function the length of the data must be specified. I just generated a &lt;em&gt;LABEL_COLUMN&lt;/em&gt; in my dataframe with NAs and kept the rest of the code the same. If you do it this way, you also don’t have to modify the &lt;em&gt;tokenize_fun()&lt;/em&gt; function. For my convenience I modified the function anyway, to accept two strings for the data and the label column:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tokenize_fun = function(dataset, DATA_COLUMN, LABEL_COLUMN) {
+  c(indices, target, segments) %&amp;lt;-% list(list(),list(),list())
+  pb = txtProgressBar(min = 0, max = nrow(dataset), initial = 0,style = 3) 
+  for (i in 1:nrow(dataset)) {
+    setTxtProgressBar(pb,i)
+    c(indices_tok, segments_tok) %&amp;lt;-% tokenizer$encode(dataset[[DATA_COLUMN]][i], 
+                                                       max_len=seq_length)
+    indices = indices %&amp;gt;% append(list(as.matrix(indices_tok)))
+    target = target %&amp;gt;% append(dataset[[LABEL_COLUMN]][i])
+    segments = segments %&amp;gt;% append(list(as.matrix(segments_tok)))
+  }
+  return(list(indices, segments, target))
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Generating predictions from the model is quite simple, just use the &lt;em&gt;predict()&lt;/em&gt; function with the model, and the tokenized data:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;predict(bert, concat, verbose = 1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The regular &lt;em&gt;predict()&lt;/em&gt; function has no verbosity, so there is no default. I highly recommend setting it as prediction might take a while. You might even want to do the prediction on a cluster as well.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;some-advice-for-using-a-cluster&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Some advice for using a cluster:&lt;/h2&gt;
+&lt;p&gt;This is probably some pretty natural stuff for anyone who already worked with a cluster, but as this was my first experience with one, I want to state a single thing that I wish I had known earlier:&lt;/p&gt;
+&lt;p&gt;I am not sure, whether every cluster offers this functionality, but at my place I was able to queue an interactive session instead of a job. After some waiting, this provides you with a shell interface to a node. Troubleshooting is so much easier if you don’t have to wait an hour for your job to be scheduled and then see it fail within seconds because you made a typo. Just run your script with &lt;em&gt;Rscript&lt;/em&gt; and don’t forget to include many&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cat(paste(Sys.time(), &amp;quot;Loading some data or whatever...\n&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;to see where your stuff fails. And it will fail.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

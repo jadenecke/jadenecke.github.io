@@ -614,8 +614,8 @@ try(k_constant(1), silent=TRUE)</code></pre>
 <p>There are different means of saving and loading a model with keras:</p>
 <ul>
 <li>save_model_tf(): This function saves the model as multiple files in a folder and you have to specify the only the folder, if you want to load the model. I had no luck with this. There always was an error message when I tried to load the model but i also didn’t try to hard, as I found another way that worked for me.</li>
-<li>save_model_weights_tf/hdf5(): As far as I understand, this only saves the matrix with the weights, so you need to specify and compile the whole model as it was trained, when you want to load weights into the model.
--save_model_hdf5(): This was the function I ended up using, although it also wasn’t very straight forward. It saves the model in a single file (or multiple, depending on the size). The slightly finicky details are as follows:</li>
+<li>save_model_weights_tf/hdf5(): As far as I understand, this only saves the matrix with the weights, so you need to specify and compile the whole model as it was trained, when you want to load weights into the model.</li>
+<li>save_model_hdf5(): This was the function I ended up using, although it also wasn’t very straight forward. It saves the model in a single file (or multiple, depending on the size). The slightly finicky details are as follows:</li>
 </ul>
 <p>You want to load the model with the following command:</p>
 <pre class="r"><code>bert &lt;- keras::load_model_hdf5(&quot;path/to/file.hdf5&quot;),

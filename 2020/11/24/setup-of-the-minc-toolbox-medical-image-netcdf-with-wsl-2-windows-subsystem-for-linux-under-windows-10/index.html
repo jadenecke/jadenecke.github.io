@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Student">
+  <meta name="description" content="This post is a summary of my experiences and difficulties with setting up MINC under WSL. MINC is a set of open-source tools for processing MRI files. It is developed at the McConnell Brain Imaging Centre, Montreal Neurological Institute (http://bic-mni.github.io/). In order to run it on a Windows machine, one needs to set up a virtual machine (VM), in my case an Ubuntu distribution. In the following, I will provide the steps and resources required to have a convenient setup using the Windows Subsystem for Linux (WSL) 2.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/">
+  <link rel="alternate" hreflang="en-us" href="/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/">
 
   
 
@@ -210,14 +210,12 @@
 
 
   
-  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Visual Clutter">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/post/">
+  <link rel="canonical" href="/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/">
 
   
   
@@ -234,18 +232,63 @@
   <meta property="twitter:creator" content="@jadenecke1">
   
   <meta property="og:site_name" content="Visual Clutter">
-  <meta property="og:url" content="/post/">
-  <meta property="og:title" content="Posts | Visual Clutter">
-  <meta property="og:description" content="Student"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/">
+  <meta property="og:title" content="Setup of the MINC toolbox (Medical Image NetCDF) with WSL 2 (Windows Subsystem for Linux) under Windows 10 | Visual Clutter">
+  <meta property="og:description" content="This post is a summary of my experiences and difficulties with setting up MINC under WSL. MINC is a set of open-source tools for processing MRI files. It is developed at the McConnell Brain Imaging Centre, Montreal Neurological Institute (http://bic-mni.github.io/). In order to run it on a Windows machine, one needs to set up a virtual machine (VM), in my case an Ubuntu distribution. In the following, I will provide the steps and resources required to have a convenient setup using the Windows Subsystem for Linux (WSL) 2."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-11-24T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2020-11-24T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-11-24T00:00:00&#43;00:00">
   
 
   
 
 
+    
 
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/"
+  },
+  "headline": "Setup of the MINC toolbox (Medical Image NetCDF) with WSL 2 (Windows Subsystem for Linux) under Windows 10",
+  
+  "datePublished": "2020-11-24T00:00:00Z",
+  "dateModified": "2020-11-24T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Jannis Denecke"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Visual Clutter",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "This post is a summary of my experiences and difficulties with setting up MINC under WSL. MINC is a set of open-source tools for processing MRI files. It is developed at the McConnell Brain Imaging Centre, Montreal Neurological Institute (http://bic-mni.github.io/). In order to run it on a Windows machine, one needs to set up a virtual machine (VM), in my case an Ubuntu distribution. In the following, I will provide the steps and resources required to have a convenient setup using the Windows Subsystem for Linux (WSL) 2."
+}
+</script>
+
+  
 
   
 
@@ -253,10 +296,13 @@
   
 
 
+  
 
 
 
-  <title>Posts | Visual Clutter</title>
+
+
+  <title>Setup of the MINC toolbox (Medical Image NetCDF) with WSL 2 (Windows Subsystem for Linux) under Windows 10 | Visual Clutter</title>
 
 </head>
 
@@ -417,78 +463,33 @@
 </nav>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
+  <article class="article">
 
   
 
+
+
+
+
+
+
+
+
+
+
+
+  
+
   
   
+  
+<div class="article-container pt-3">
+  <h1>Setup of the MINC toolbox (Medical Image NetCDF) with WSL 2 (Windows Subsystem for Linux) under Windows 10</h1>
+
+  
+
   
     
-  
-<div class="universal-wrapper pt-3">
-  <h1>Posts</h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-
-  
-
-  
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/" >Setup of the MINC toolbox (Medical Image NetCDF) with WSL 2 (Windows Subsystem for Linux) under Windows 10</a>
-    </h3>
-
-    
-    <div class="article-style">
-      This post is a summary of my experiences and difficulties with setting up MINC under WSL. MINC is a set of open-source tools for …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
 
 
 <div class="article-metadata">
@@ -528,114 +529,223 @@
 
 </div>
 
-      
-    </div>
-
     
 
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 </div>
 
-    
-  
-    
-      
 
 
+  <div class="article-container">
 
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/2020/03/09/training-a-bidirectional-encoder-representations-from-transformers-bert-on-a-cluster-with-r-links-and-tips/" >Training a Bidirectional Encoder Representations from Transformers (BERT) on a Cluster with R: Links and tips</a>
-    </h3>
-
-    
     <div class="article-style">
-      This will merely be a short script of what my experience was and which errors I encountered. Or see it as notes in the case that I ever …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
-      
-        
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    9 Mar, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    6 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/r/">R</a>, <a href="/categories/nlp/">NLP</a></span>
-  
-
+<p>This post is a summary of my experiences and difficulties with setting up MINC under WSL. MINC is a set of open-source tools for processing MRI files. It is developed at the McConnell Brain Imaging Centre, Montreal Neurological Institute (<a href="http://bic-mni.github.io/" class="uri">http://bic-mni.github.io/</a>). In order to run it on a Windows machine, one needs to set up a virtual machine (VM), in my case an Ubuntu distribution. In the following, I will provide the steps and resources required to have a convenient setup using the Windows Subsystem for Linux (WSL) 2.</p>
+<div id="installing-wsl-2" class="section level2">
+<h2>Installing WSL 2:</h2>
+<p>Microsoft provides a detailed step-by-step tutorial for this:
+- German: <a href="https://docs.microsoft.com/de-de/windows/wsl/install-win10" class="uri">https://docs.microsoft.com/de-de/windows/wsl/install-win10</a>
+- English: <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" class="uri">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a></p>
+<p>Please make sure to follow closely and also check the “Troubleshooting installation” section. I experienced two errors, one related to a visualization setting in the BIOS, the other regarding folder compression. Both (and some more) are explained in the troubleshooting section of the Microsoft article.</p>
+</div>
+<div id="installing-mobaxterm" class="section level2">
+<h2>Installing MobaXterm:</h2>
+<p>You need to set up an X11 server to on your windows machine to access the graphical interface of MINC. I recommend MobaXterm, but there are other tools available:</p>
+<ul>
+<li><a href="https://mobaxterm.mobatek.net/" class="uri">https://mobaxterm.mobatek.net/</a></li>
+</ul>
+<p>Download, install, and launch the software. The X11 server should be already running when you launch the software, indicated by the colored X symbol in the upper right hand corner. The software should also automatically detect your Ubuntu distribution. You can open a terminal to your Ubuntu VM and it will start the VM, even when it is stopped. You will need the terminal to carry out the next step.</p>
+</div>
+<div id="installing-minc" class="section level2">
+<h2>Installing MINC:</h2>
+<p>The full details are documented here, depending on the choice of your operating system:</p>
+<ul>
+<li><a href="http://bic-mni.github.io/" class="uri">http://bic-mni.github.io/</a></li>
+</ul>
+<p>You can download the files with windows, as the VM has read-access to your windows files (under <code>/mnt/</code>). You can also download the files with <code>curl</code> in your VM.</p>
+</div>
+<div id="set-launch-options" class="section level2">
+<h2>Set Launch options:</h2>
+<p>There are two commands that I would like to execute on every launch with this VM:</p>
+<p>First, you need to set the X11 display adress on your VM:</p>
+<ul>
+<li><code>export DISPLAY="$(/sbin/ip route | awk '/default/ { print $3 }'):0"</code></li>
+</ul>
+<p>Second, you need to source the MINC config. I think this is because it uses some common names and you don’t want to have them sourced all the time. Since this is a one purpose VM (MINC), we can source the toolbox at startup:</p>
+<ul>
+<li><code>source /opt/minc/1.9.18/minc-toolkit-config.sh</code> for bash</li>
+<li><code>source /opt/minc/1.9.18/minc-toolkit-config.csh</code> for tcsh</li>
+</ul>
+<p>To add these commands to your launch options of your VM, right-click the WSL-Ubuntu (differs for other OSs) session in MobaXterm and select “Edit Session”. Next, select the “Advanced WSL settings” tab and add the commands to the startup routine.</p>
+</div>
+<div id="wrap-up" class="section level2">
+<h2>Wrap up:</h2>
+<p>Close your open terminals and start a fresh one for your VM. Check whether e.g. the <code>Display</code> command works for you and the X11 transmission works properly. You might want to set the X11 remote access setting from “on-demand” to “full” in your MobaXterm settings if you want to avoid confirming the X11 session all the time.</p>
 </div>
 
-      
     </div>
 
     
 
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/wsl/">WSL</a>
+  
+  <a class="badge badge-light" href="/tags/minc/">MINC</a>
+  
+  <a class="badge badge-light" href="/tags/linux/">LINUX</a>
+  
+  <a class="badge badge-light" href="/tags/vm/">VM</a>
+  
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
     
   
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hucc023bc5581f39ca316015b5c34f853e_377230_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
 
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Jannis Denecke</a></h5>
+      <h6 class="card-subtitle">Student</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/jdenecke1" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/jannis-denecke-16a865182/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/jadenecke" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
   
 
 
-</div>
+
+  </div>
+</article>
 
       
 

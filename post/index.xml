@@ -5,12 +5,66 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 24 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Setup of the MINC toolbox (Medical Image NetCDF) with WSL 2 (Windows Subsystem for Linux) under Windows 10</title>
+      <link>/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This post is a summary of my experiences and difficulties with setting up MINC under WSL. MINC is a set of open-source tools for processing MRI files. It is developed at the McConnell Brain Imaging Centre, Montreal Neurological Institute (&lt;a href=&#34;http://bic-mni.github.io/&#34; class=&#34;uri&#34;&gt;http://bic-mni.github.io/&lt;/a&gt;). In order to run it on a Windows machine, one needs to set up a virtual machine (VM), in my case an Ubuntu distribution. In the following, I will provide the steps and resources required to have a convenient setup using the Windows Subsystem for Linux (WSL) 2.&lt;/p&gt;
+&lt;div id=&#34;installing-wsl-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installing WSL 2:&lt;/h2&gt;
+&lt;p&gt;Microsoft provides a detailed step-by-step tutorial for this:
+- German: &lt;a href=&#34;https://docs.microsoft.com/de-de/windows/wsl/install-win10&#34; class=&#34;uri&#34;&gt;https://docs.microsoft.com/de-de/windows/wsl/install-win10&lt;/a&gt;
+- English: &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/wsl/install-win10&#34; class=&#34;uri&#34;&gt;https://docs.microsoft.com/en-us/windows/wsl/install-win10&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please make sure to follow closely and also check the “Troubleshooting installation” section. I experienced two errors, one related to a visualization setting in the BIOS, the other regarding folder compression. Both (and some more) are explained in the troubleshooting section of the Microsoft article.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installing-mobaxterm&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installing MobaXterm:&lt;/h2&gt;
+&lt;p&gt;You need to set up an X11 server to on your windows machine to access the graphical interface of MINC. I recommend MobaXterm, but there are other tools available:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mobaxterm.mobatek.net/&#34; class=&#34;uri&#34;&gt;https://mobaxterm.mobatek.net/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Download, install, and launch the software. The X11 server should be already running when you launch the software, indicated by the colored X symbol in the upper right hand corner. The software should also automatically detect your Ubuntu distribution. You can open a terminal to your Ubuntu VM and it will start the VM, even when it is stopped. You will need the terminal to carry out the next step.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installing-minc&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installing MINC:&lt;/h2&gt;
+&lt;p&gt;The full details are documented here, depending on the choice of your operating system:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bic-mni.github.io/&#34; class=&#34;uri&#34;&gt;http://bic-mni.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can download the files with windows, as the VM has read-access to your windows files (under &lt;code&gt;/mnt/&lt;/code&gt;). You can also download the files with &lt;code&gt;curl&lt;/code&gt; in your VM.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;set-launch-options&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Set Launch options:&lt;/h2&gt;
+&lt;p&gt;There are two commands that I would like to execute on every launch with this VM:&lt;/p&gt;
+&lt;p&gt;First, you need to set the X11 display adress on your VM:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;export DISPLAY=&#34;$(/sbin/ip route | awk &#39;/default/ { print $3 }&#39;):0&#34;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Second, you need to source the MINC config. I think this is because it uses some common names and you don’t want to have them sourced all the time. Since this is a one purpose VM (MINC), we can source the toolbox at startup:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;source /opt/minc/1.9.18/minc-toolkit-config.sh&lt;/code&gt; for bash&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;source /opt/minc/1.9.18/minc-toolkit-config.csh&lt;/code&gt; for tcsh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To add these commands to your launch options of your VM, right-click the WSL-Ubuntu (differs for other OSs) session in MobaXterm and select “Edit Session”. Next, select the “Advanced WSL settings” tab and add the commands to the startup routine.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;wrap-up&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Wrap up:&lt;/h2&gt;
+&lt;p&gt;Close your open terminals and start a fresh one for your VM. Check whether e.g. the &lt;code&gt;Display&lt;/code&gt; command works for you and the X11 transmission works properly. You might want to set the X11 remote access setting from “on-demand” to “full” in your MobaXterm settings if you want to avoid confirming the X11 session all the time.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Training a Bidirectional Encoder Representations from Transformers (BERT) on a Cluster with R: Links and tips</title>

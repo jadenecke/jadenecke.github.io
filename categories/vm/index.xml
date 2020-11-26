@@ -48,7 +48,7 @@
 &lt;div id=&#34;set-launch-options&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Set Launch options:&lt;/h2&gt;
 &lt;p&gt;There are two commands that I would like to execute on every launch with this VM:&lt;/p&gt;
-&lt;p&gt;First, you need to set the X11 display adress on your VM:&lt;/p&gt;
+&lt;p&gt;First, you need to set the X11 display address on your VM:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;export DISPLAY=&#34;$(/sbin/ip route | awk &#39;/default/ { print $3 }&#39;):0&#34;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;

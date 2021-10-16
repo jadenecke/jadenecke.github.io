@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NLP | Visual Clutter</title>
-    <link>/tags/nlp/</link>
-      <atom:link href="/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jadenecke.github.io/tags/nlp/</link>
+      <atom:link href="https://jadenecke.github.io/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
     <description>NLP</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>NLP</title>
-      <link>/tags/nlp/</link>
+      <link>https://jadenecke.github.io/tags/nlp/</link>
     </image>
     
     <item>
       <title>Training a Bidirectional Encoder Representations from Transformers (BERT) on a Cluster with R: Links and tips</title>
-      <link>/2020/03/09/training-a-bidirectional-encoder-representations-from-transformers-bert-on-a-cluster-with-r-links-and-tips/</link>
+      <link>https://jadenecke.github.io/2020/03/09/training-a-bidirectional-encoder-representations-from-transformers-bert-on-a-cluster-with-r-links-and-tips/</link>
       <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>/2020/03/09/training-a-bidirectional-encoder-representations-from-transformers-bert-on-a-cluster-with-r-links-and-tips/</guid>
+      <guid>https://jadenecke.github.io/2020/03/09/training-a-bidirectional-encoder-representations-from-transformers-bert-on-a-cluster-with-r-links-and-tips/</guid>
       <description>
 
 

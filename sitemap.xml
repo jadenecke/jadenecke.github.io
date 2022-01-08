@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jadenecke.github.io/project/citymaps/</loc>
+    <lastmod>2022-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jadenecke.github.io/tags/maps/</loc>
+    <lastmod>2022-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jadenecke.github.io/tags/osm/</loc>
+    <lastmod>2022-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jadenecke.github.io/project/</loc>
+    <lastmod>2022-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jadenecke.github.io/tags/</loc>
+    <lastmod>2022-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jadenecke.github.io/</loc>
+    <lastmod>2022-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jadenecke.github.io/categories/</loc>
     <lastmod>2020-11-24T00:00:00+00:00</lastmod>
   </url>
@@ -34,16 +64,6 @@
   
   <url>
     <loc>https://jadenecke.github.io/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/</loc>
-    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jadenecke.github.io/tags/</loc>
-    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jadenecke.github.io/</loc>
     <lastmod>2020-11-24T00:00:00+00:00</lastmod>
   </url>
   

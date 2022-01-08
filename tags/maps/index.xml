@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maps | Visual Clutter</title>
+    <link>https://jadenecke.github.io/tags/maps/</link>
+      <atom:link href="https://jadenecke.github.io/tags/maps/index.xml" rel="self" type="application/rss+xml" />
+    <description>Maps</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>2020-2022 Jannis Denecke</copyright><lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Maps</title>
+      <link>https://jadenecke.github.io/tags/maps/</link>
+    </image>
+    
+    <item>
+      <title>City Maps</title>
+      <link>https://jadenecke.github.io/project/citymaps/</link>
+      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jadenecke.github.io/project/citymaps/</guid>
+      <description>&lt;p&gt;A script I wrote to generate artistic city maps from OpenStreeMap. The script downloads the data to disk and reloads it to memory, to finally create the plot. The script automatically adjusts (roughly, according to the 1° lat = 111,111m 
+&lt;a href=&#34;https://gis.stackexchange.com/questions/2951/algorithm-for-offsetting-a-latitude-longitude-by-some-amount-of-meters&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rule&lt;/a&gt;) the coordinates to your aspect ratio in order to avoid distortions of the map. I did not manage to remove the white space on the top and right side of the plot. In addition, the code developed from a specific city to general, so there are many inherited inconveniences, especially in terms of size scaling.&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://gist.github.com/jadenecke/5252609ef06f1655f42d8cdcd8b0b51e&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Download the script here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

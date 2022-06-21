@@ -44,25 +44,6 @@
     </item>
     
     <item>
-      <title>City Maps</title>
-      <link>https://jadenecke.github.io/project/copyofcommute2/</link>
-      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://jadenecke.github.io/project/copyofcommute2/</guid>
-      <description>&lt;p&gt;As preparation to approach the housing market of munich, I wanted to create a map showing the duration it would take to commute via public transport for both my partner and I. For mapping, my 
-&lt;a href=&#34;https://jadenecke.github.io/project/citymaps/&#34; title=&#34;city maps code&#34;&gt;city maps code&lt;/a&gt; was used, overlaid by a heatmap. The data was queried for points on a grid and linearly interpolated to reduce the number of API queries. For this specific version, the map displays the maximum time to either of two stations and is capped of at 60 minutes.&lt;/p&gt;
-&lt;p&gt;APIs used, please be kind:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MVG-API (undocumented, munich public transport data, 
-&lt;a href=&#34;https://pypi.org/project/mvg-api/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;some hints can be found here&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://wiki.openstreetmap.org/wiki/API&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OSM-API&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The Code can be found here: 
-&lt;a href=&#34;https://github.com/jadenecke/MunichMetroHeatMap&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github Repo&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Setup of the MINC toolbox (Medical Image NetCDF) with WSL 2 (Windows Subsystem for Linux) under Windows 10</title>
       <link>https://jadenecke.github.io/2020/11/24/setup-of-the-minc-toolbox-medical-image-netcdf-with-wsl-2-windows-subsystem-for-linux-under-windows-10/</link>
       <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>

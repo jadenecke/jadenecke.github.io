@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="R Script to download and plot OpenStreetMap data">
+  <meta name="description" content="R Script to plot public transport commute times over a city map">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://jadenecke.github.io/project/citymaps/">
+  <link rel="alternate" hreflang="en-us" href="https://jadenecke.github.io/project/commute/">
 
   
 
@@ -215,7 +215,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://jadenecke.github.io/project/citymaps/">
+  <link rel="canonical" href="https://jadenecke.github.io/project/commute/">
 
   
   
@@ -231,10 +231,10 @@
   <meta property="twitter:creator" content="@jadenecke1">
   
   <meta property="og:site_name" content="Visual Clutter">
-  <meta property="og:url" content="https://jadenecke.github.io/project/citymaps/">
+  <meta property="og:url" content="https://jadenecke.github.io/project/commute/">
   <meta property="og:title" content="City Maps | Visual Clutter">
-  <meta property="og:description" content="R Script to download and plot OpenStreetMap data"><meta property="og:image" content="https://jadenecke.github.io/project/citymaps/featured.jpg">
-  <meta property="twitter:image" content="https://jadenecke.github.io/project/citymaps/featured.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="R Script to plot public transport commute times over a city map"><meta property="og:image" content="https://jadenecke.github.io/project/commute/featured.png">
+  <meta property="twitter:image" content="https://jadenecke.github.io/project/commute/featured.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2022-01-07T00:00:00&#43;00:00">
@@ -261,12 +261,12 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://jadenecke.github.io/project/citymaps/"
+    "@id": "https://jadenecke.github.io/project/commute/"
   },
   "headline": "City Maps",
   
   "image": [
-    "https://jadenecke.github.io/project/citymaps/featured.jpg"
+    "https://jadenecke.github.io/project/commute/featured.png"
   ],
   
   "datePublished": "2022-01-07T00:00:00Z",
@@ -285,7 +285,7 @@
       "url": "https://jadenecke.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "R Script to download and plot OpenStreetMap data"
+  "description": "R Script to plot public transport commute times over a city map"
 }
 </script>
 
@@ -613,9 +613,9 @@
   
     
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://gist.github.com/jadenecke/5252609ef06f1655f42d8cdcd8b0b51e" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/jadenecke/MunichMetroHeatMap" target="_blank" rel="noopener">
     <i class="fab fa-github mr-1"></i>
-    Gist Code
+    Github Repo
   </a>
 
 
@@ -625,10 +625,10 @@
 </div>
 
 
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 900px;">
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
-    <img src="/project/citymaps/featured_hu67b055a4187016dc684b66c4b94b3a8a_750548_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Map of Berlin</span>
+    <img src="/project/commute/featured_hu7b920c77143cdb2498142f57b018e4b6_943545_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    <span class="article-header-caption">Public transport commute times over a city map</span>
   </div>
 </div>
 
@@ -637,10 +637,17 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>A script I wrote to generate artistic city maps from OpenStreeMap. The script downloads the data to disk and reloads it to memory, to finally create the plot. The script automatically adjusts (roughly, according to the 1° lat = 111,111m 
-<a href="https://gis.stackexchange.com/questions/2951/algorithm-for-offsetting-a-latitude-longitude-by-some-amount-of-meters" target="_blank" rel="noopener">rule</a>) the coordinates to your aspect ratio in order to avoid distortions of the map. I did not manage to remove the white space on the top and right side of the plot. In addition, the code developed from a specific city to general, so there are many inherited inconveniences, especially in terms of size scaling.</p>
-<p>
-<a href="https://gist.github.com/jadenecke/5252609ef06f1655f42d8cdcd8b0b51e" target="_blank" rel="noopener">Download the script here</a></p>
+      <p>As preparation to approach the housing market of munich, I wanted to create a map showing the duration it would take to commute via public transport for both my partner and I. For mapping, my 
+<a href="https://jadenecke.github.io/project/citymaps/" title="city maps code">city maps code</a> was used, overlaid by a heatmap. The data was queried for points on a grid and linearly interpolated to reduce the number of API queries. For this specific version, the map displays the maximum time to either of two stations and is capped of at 60 minutes.</p>
+<p>APIs used, please be kind:</p>
+<ul>
+<li>MVG-API (undocumented, munich public transport data, 
+<a href="https://pypi.org/project/mvg-api/" target="_blank" rel="noopener">some hints can be found here</a>)</li>
+<li>
+<a href="https://wiki.openstreetmap.org/wiki/API" target="_blank" rel="noopener">OSM-API</a></li>
+</ul>
+<p>The Code can be found here: 
+<a href="https://github.com/jadenecke/MunichMetroHeatMap" target="_blank" rel="noopener">Github Repo</a></p>
 
     </div>
 
@@ -784,9 +791,9 @@
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/project/commute/">City Maps</a></li>
-      
       <li><a href="/project/copyofcommute2/">City Maps</a></li>
+      
+      <li><a href="/project/citymaps/">City Maps</a></li>
       
     </ul>
   </div>
